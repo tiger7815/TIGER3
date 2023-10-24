@@ -34,7 +34,8 @@ bot = Client(
       api_id=api_id,
       api_hash=api_hash, 
       bot_token=bot_token)
-      
+auth_users = [
+    int(chat) for chat in os.environ.get("AUTH_USERS").split(",") if chat != '']
 
 @bot.on_message(filters.command(["start"])  & ~filters.edited)
 async def account_login(bot: Client, m: Message):

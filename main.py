@@ -36,19 +36,19 @@ bot = Client(
       bot_token=bot_token)
       
 
-@bot.on_message(filters.command(["start"])  & filters.user(ADMINS))
+@bot.on_message(filters.command(["start"])  & ~filters.edited)
 async def account_login(bot: Client, m: Message):
 
     editable = await m.reply_text("𝐇𝐞𝐥𝐥𝐨 𝐃𝐞𝐚𝐫 👋!\n\n➠𝐈 𝐚𝐦 𝐚 𝐓𝐞𝐱𝐭 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐞𝐫 𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐖𝐢𝐭𝐡 ♥️\n\n➠𝐔𝐬𝐞 /txt 𝐂𝐨𝐦𝐦𝐚𝐧𝐝 𝐓𝐨 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐅𝐫𝐨𝐦 𝐓𝐗𝐓 𝐅𝐢𝐥𝐞.\n\n➠𝐌𝐨𝐝𝐢𝐟𝐢𝐞𝐝 𝐁𝐲: @dragon_empire7 \n")
 
 
-@bot.on_message(filters.command(["cancel"])  & filters.user(ADMINS))
+@bot.on_message(filters.command(["cancel"])  & ~filters.edited)
 async def cancel(_, m):
     await m.reply_text("𝐂𝐚𝐧𝐜𝐞𝐥𝐥𝐢𝐧𝐠 𝐀𝐥𝐥 𝐩𝐫𝐨𝐜𝐞𝐬𝐬 𝐏𝐥𝐳 𝐖𝐚𝐢𝐭 🤗", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
-@bot.on_message(filters.command("restart")  & filters.user(ADMINS))
+@bot.on_message(filters.command("restart")  & ~filters.edited)
 async def restart_handler(_, m):
     await m.reply_text("𝐑𝐞𝐬𝐭𝐚𝐫𝐭𝐞𝐝 😎! 𝐆𝐢𝐯𝐞 /txt 𝐂𝐨𝐦𝐦𝐚𝐧𝐝 𝐓𝐨 𝐒𝐭𝐚𝐫𝐭 𝐏𝐫𝐨𝐜𝐞𝐬𝐬 𝐀𝐠𝐚𝐢𝐧 𝐅𝐫𝐨𝐦 𝐁𝐞𝐠𝐢𝐧𝐧𝐢𝐧𝐠", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
@@ -67,7 +67,7 @@ def get_va(link):
 
 
 
-@bot.on_message(filters.command(["txt"])  & filters.user(ADMINS))
+@bot.on_message(filters.command(["txt"])  & ~filters.edited)
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text(
             "𝐇𝐞𝐥𝐥𝐨 𝐃𝐞𝐚𝐫 👋!\n\n➠𝐈 𝐚𝐦 𝐚 𝐓𝐞𝐱𝐭 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐞𝐫 𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐖𝐢𝐭𝐡 ♥️\n\n➠𝐈 𝐜𝐚𝐧 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐕𝐢𝐝𝐞𝐨𝐬 𝐅𝐫𝐨𝐦 𝐓𝐗𝐓 𝐅𝐢𝐥𝐞 𝐎𝐧𝐞 𝐁𝐲 𝐎𝐧𝐞.\n\n➠𝐌𝐨𝐝𝐢𝐟𝐢𝐞𝐝 𝐁𝐲: @dragon_empire7 \n\n➠𝐍𝐨𝐰 𝐒𝐞𝐧𝐝 𝐌𝐞 𝐘𝐨𝐮𝐫 𝐓𝐗𝐓 𝐅𝐢𝐥𝐞 𝐢𝐧 𝐀 𝐏𝐫𝐨𝐩𝐞𝐫 𝐖𝐚𝐲\n")

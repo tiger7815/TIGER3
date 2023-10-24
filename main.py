@@ -33,8 +33,8 @@ bot = Client(
      "bot",
       api_id=api_id,
       api_hash=api_hash, 
-      bot_token=bot_token,
-      auth_users=auth_users)
+      bot_token=bot_token)
+      
 
 @bot.on_message(filters.command(["start"]))
 async def account_login(bot: Client, m: Message):

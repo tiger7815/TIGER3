@@ -11,7 +11,7 @@ from pyrogram.types import Message
 import pyrogram
 import tgcrypto
 from p_bar import progress_bar
-from details import api_id, api_hash, bot_token
+from details import api_id, api_hash, bot_token, auth_users
 from subprocess import getstatusoutput
 import helper
 import logging
@@ -33,8 +33,8 @@ bot = Client(
      "bot",
       api_id=api_id,
       api_hash=api_hash, 
-      bot_token=bot_token)
-
+      bot_token=bot_token,
+      auth_users=auth_users)
 
 @bot.on_message(filters.command(["start"]))
 async def account_login(bot: Client, m: Message):
